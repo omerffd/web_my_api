@@ -64,7 +64,7 @@ app.get('/buy-cow/:id', (req, res) => {
 app.get('/self-check', async (req, res) => {
   try {
     // Kendine istek atan URL'yi oluştur
-    const selfUrl = `http://localhost:${port}/buy-cow`;
+    const selfUrl = `${port}/buy-cow`;
 
     // Kendine bir istek atar ve inek listesini alır
     const response = await axios.get(selfUrl);
