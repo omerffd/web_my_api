@@ -3,8 +3,12 @@ const app = express();
 const cors = require('cors');
 const axios = require('axios');
 
+// Çevre değişkenlerini yükle
+require('dotenv').config();
+
 // Dinamik port (Railway veya lokal için)
 const port = process.env.PORT || 3001;
+const baseUrl = process.env.BASE_URL || `http://localhost:${port}`;
 
 // COW Listesi
 const cows = [
@@ -64,7 +68,7 @@ app.get('/buy-cow/:id', (req, res) => {
 app.get('/self-check', async (req, res) => {
   try {
     // Kendine istek atan URL'yi oluştur
-    const selfUrl = `${port}/buy-cow`;
+    const selfUrl = `${baseUrl}/buy-cow`;
 
     // Kendine bir istek atar ve inek listesini alır
     const response = await axios.get(selfUrl);
