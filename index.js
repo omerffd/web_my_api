@@ -59,6 +59,11 @@ app.get('/buy-cow/:id', (req, res) => {
   }
 });
 
+// Root path için endpoint
+app.get('/', (req, res) => {
+  res.json({ message: 'API çalışıyor!' });
+});
+
 // Sunucu başlatma
 app.listen(port, () => {
   console.log(`Sunucu ${port} numaralı portta çalışıyor.`);
