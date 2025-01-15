@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require("cors"); // cors modülünü ekleyin
-const port = 3000;
+const port = 3001;
 
 const API = process.env.REACT_APP_API;
 
